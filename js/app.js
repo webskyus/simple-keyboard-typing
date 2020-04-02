@@ -69,7 +69,7 @@ window.addEventListener('DOMContentLoaded', function () {
 				audio = new Audio();
 
 		audio.preload = 'auto';
-		audio.src = '/sound/typewriter.mp3';
+		audio.src = './sound/typewriter.mp3';
 				
 		for (let i = 0; i < keyBtn.length; i++) {
 			if (e.key == keyBtn[i].dataset.symbolFirst || e.key == keyBtn[i].dataset.symbolSecond || e.key == keyBtn[i].dataset.symbol) {

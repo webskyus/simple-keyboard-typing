@@ -1,0 +1,179 @@
+$white: #fff;
+$black: #000;
+$grey: #646464;
+$dark_grey: #3F3F3F;
+$checked_letter: #986ddc;
+$invalid_letter: #c2164f;
+$font: 'Gotu', sans-serif;
+
+
+=font_gotu
+	font-family: $font
+	font-weight: normal
+
+		
+body,
+html
+	display: flex
+	flex-direction: column
+	width: 100%
+	height: 100%
+	min-width: 100%
+	min-height: 100%
+	overflow: hidden
+	+font_gotu
+
+body
+	scroll-behavior: smooth
+	background: url('../images/robot.png') no-repeat
+	background-size: cover
+	background-position: center center
+	transition: all 0.2s
+
+
+.container 
+	max-width: 960px
+	margin: 0 auto 
+
+@media screen and ( max-width:  960px)
+	.container
+		padding: 20px 
+
+@media screen and ( min-width:  1100px)
+	.container
+		max-width: 1100px
+
+@media screen and ( min-width:  1200px)
+	.container
+		max-width: 1200px
+
+@media screen and ( min-width:  1300px)
+	.container
+		max-width: 1300px
+
+@media screen and ( min-width:  1400px)
+	.container
+		max-width: 1366px
+
+.row
+	display: flex
+
+.textpanel__paragraph-wrapper
+	margin-top: 50px 
+	overflow: hidden
+
+.textpanel__paragraph
+	position: relative
+	left: 30px 
+	padding: 20px
+	// padding-right: 0
+	padding-left: 0
+	padding-bottom: 30px
+	height: 255px 
+	// box-sizing: border-box
+	overflow-y: hidden
+	overflow-x: hidden
+	font-size: 40px 
+	line-height: 1.4
+	// word-break: break-all
+	color: $white 
+	transition: all 0.2s
+
+.textpanel__letter
+	display: inline
+
+.textpanel__letter--checked
+	background: $checked_letter
+
+.textpanel__letter--invalid
+	background: $invalid_letter
+
+.keyboardpanel
+	margin-top: 30px
+
+.keyboard 
+	display: flex
+	flex-direction: column
+	width: 100%
+	padding: 5px
+	color: $white
+	background: linear-gradient(0deg, rgba($black, 0.82), rgba($black, 0.82)), rgba($white, 0.4)
+	backdrop-filter: blur(70px)
+
+.keyboard__row
+	display: flex
+	width: 100%
+	&--numbers
+		.keyboard__button
+				height: 40px
+				font-size: 12px
+	&--letters
+		.keyboard__button
+				height: 60px
+	&--last
+		.keyboard__button
+				height: 60px
+				max-width: unset
+		[data-style="dark_grey"]
+			flex-basis: 15%
+			width: 15%
+			min-width: unset
+
+
+.keyboard__button
+	display: flex
+	align-items: center
+	justify-content: center
+	flex-direction: column
+	width: 85px
+	max-width: 90px
+	margin: 3px
+	padding: 10px
+	flex-grow: 1
+	box-sizing: border-box
+	cursor: pointer
+	border: none 
+	color: $white
+	background: $black 
+	background: $grey
+	box-shadow: 0px 1px 0px rgba($black, 0.3)
+	border-radius: 5px
+	transition: all 0.3s
+	&.keyboard__button--press 
+		transform: scale(0.95)
+	span 
+		&:last-child
+			margin-top: 5px
+
+[data-symbol="delete"]
+	align-items: flex-end
+
+[data-symbol="tab"]
+	align-items: flex-start
+
+[data-symbol="capslock"]
+	align-items: flex-start
+
+[data-symbol="return"]
+	align-items: flex-end
+
+[data-symbol="shift"]
+	align-items: flex-start
+
+[data-style="dark_grey"]
+	min-width: 134px
+	background: $dark_grey
+
+[data-style="dark_grey_big"]
+	min-width: 156px
+	background: $dark_grey
+
+[data-style="dark_grey_biggest"]
+	min-width: 203px
+	background: $dark_grey
+
+[data-style="grey_biggest"]
+	flex-basis: 60%
+	width: 60%
+	max-width: unset
+	background: $grey

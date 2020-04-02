@@ -60,8 +60,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	}
 	
-	// Remove auto scroll when clicked in block
-
 	// Animation key press, and sound when key pressing 
 	document.addEventListener('keydown', keyPressingDown);
 	document.addEventListener('keyup', keyPressingUp);
